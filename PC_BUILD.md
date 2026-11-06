@@ -21,12 +21,14 @@ This is **not** the Infineon/芯驰 `-sim 1` flow. Defconfig already has `CONFIG
 Prefer `-gcmake -fc` **without** `-codegen` when `gen_data` already exists.  
 If you pass `-codegen` with `-compiler gcc` on board `pc`, vcos_build **does not** overwrite project `compiler` to gcc.
 
-## Command (verified 2026-10-25 Asia/Shanghai)
+## Command
+
+`build_config.json` registers a single PC app: `minimal_system` (`examples/minimal_system/system_cfg/pc/minimal_system.vcosproject`).
 
 ```bash
 cd vcos/build
 python vcos_build.py \
-  -app_name minimal_system5 \
+  -app_name minimal_system \
   -board_name pc \
   -compiler gcc \
   -maketool ninja \
@@ -34,9 +36,7 @@ python vcos_build.py \
   -gcmake -fc
 ```
 
-**Result:** `# successful generate minimal_system5`  
-**Binary:** `vcos/../output/minimal_system5_pc_gcc/minimal_system5`
-
-Same pattern for `minimal_system9` once `system_cfg/pc/gen_data` is ready.
+**Result:** `# successful generate minimal_system`  
+**Binary:** `vcos/../output/minimal_system_pc_gcc/minimal_system`
 
 `-gcmake -fc` together is supported (configure then full compile, no codegen).
