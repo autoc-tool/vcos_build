@@ -15,7 +15,7 @@
     "build_mode": "",
     "build_action": "",
     "compiler": "gcc",
-    "sim_datas": [
+    "sim_datas" : [
         {
             "sim_arxml_path": "../vendor/semidrive/boards/sim/scripts/sim_process.py",
             "sim_defconfig_gen_path": "../vendor/semidrive/boards/sim/scripts/sim_defconfig.py",
